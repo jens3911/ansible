@@ -11,7 +11,14 @@
 - name: Install packages
   become: true
   apt:
-    name: [ "tmux", "wireshark", "fzf", "kdenlive", "gimp", "xclip", "screenkey", "tldr", "ripgrep", "shutter" ]
+    name: [ "tmux", "wireshark", "fzf", "kdenlive", "gimp", "xclip", "screenkey", "tldr", "ripgrep", "shutter", "firefox" ]
   tags:
     - install
     - productivity
+
+- name: Install Browsh
+  shell: wget https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64.deb && sudo apt install ./browsh_1.8.0_linux_amd64.deb && rm ./browsh_1.8.0_linux_amd64.deb
+  tags:
+    - install
+    - dotfiles
+    - neovim
