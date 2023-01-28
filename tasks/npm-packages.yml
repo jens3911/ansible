@@ -33,4 +33,11 @@
   tags:
     - install
     - node
+- name: Install AI ASK
+  npm:
+    name: "@abhagsain/ai-cli"
+    global: yes
+  tags:
+    - install
+    - node
 
