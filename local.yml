@@ -10,7 +10,6 @@
       - install
       - core
   tasks:
-<<<<<<< HEAD
    # - include: tasks/core-setup.yml
    # - include: tasks/node-setup.yml
    # - include: tasks/npm-packages.yml
@@ -19,13 +18,3 @@
      - include: tasks/kotlin-lsp-setup.yml
    # - include: tasks/dotfiles.yml
    # - include: tasks/productivity-tools.yml
-=======
-    - include: tasks/core-setup.yml
-    #- include: tasks/node-setup.yml
-    #- include: tasks/npm-packages.yml
-      # - include: tasks/zsh-setup.yml
-    # - include: tasks/nvim-setup.yml
-    # - include: tasks/dotfiles.yml
-    # - include: tasks/productivity-tools.yml
->>>>>>> e3f0f79a0731965fc3b17e465075d8ec13a5ac32
-
