@@ -1,7 +1,7 @@
 - name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
   become: true
   apt:
-    name: ["build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev"]
+    name: ["build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev", "systemd", "gnupg", "software-properties-common"]
   tags:
     - install
     - neovim
@@ -10,7 +10,7 @@
 - name: Install System Packages 2 (lua, unzip, libtool, libtool-bin, gettext)
   become: true
   apt:
-    name: [ "lua5.1", "unzip", "libtool", "libtool-bin", "gettext"]
+    name: [ "lua5.1", "unzip", "libtool", "libtool-bin", "gettext", "default-jdk"]
   tags:
     - install
     - neovim
@@ -24,4 +24,10 @@
     - install
     - core
 
+- name: Install SDK Man
+  shell: curl -s "https://get.sdkman.io" | bash
+  tags:
+    - install
+    - dotfiles
+    - neovim
 
