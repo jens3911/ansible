@@ -15,11 +15,23 @@
     - install
     - neovim
     - core
+- name: Add non-free repo to sources.list
+  lineinfile:
+    path: /etc/apt/sources.list
+    regexp: '^deb http://deb.debian.org/debian/ bookworm main contrib'
+    line: 'deb http://deb.debian.org/debian/ bookworm main contrib non-free'
+    state: present
+  become: yes
+
+- name: Update repositories cache
+  apt:
+    update_cache: yes
+  become: yes
 
 - name: Install System Packages 3 (the rest)
   become: true
   apt:
-    name: ["i3blocks", "compton", "arc-theme", "lxappearance", "arandr", "feh", "playerctl", "compton", "curl", "htop", "golang", "lsof", "i3", "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd", "ubuntu-mate-desktop", "librust-alsa-sys-dev", "libudev-dev" ]
+    name: ["i3blocks", "compton", "arc-theme", "lxappearance", "arandr", "feh", "playerctl", "compton", "curl", "htop", "golang", "lsof", "i3", "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd", "librust-alsa-sys-dev", "libudev-dev", "zip" ]
   tags:
     - install
     - core
